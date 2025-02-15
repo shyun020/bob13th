@@ -13,10 +13,10 @@ def deserialize():
     obj = pickle.loads(bytes.fromhex(data))
     return jsonify({"message": "Deserialization complete", "data": str(obj)})
 
-@app.route("/echo", methods=["POST"])
+@app.route("/echo", methods=["GET"])
 def echo():
-    data = request.get_json()
-    return jsonify(data)
+    message = request.args.get("echo", "No message provided") 
+    return jsonify({"echo": message})  
 
 @app.route("/sql_injection", methods=["GET"])
 def sql_injection():
