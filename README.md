@@ -1,1 +1,1 @@
-Pipeline Trigger
+Pipeline Trigger.
